@@ -1,0 +1,33 @@
+import random
+import array
+ 
+maxL = 12
+ 
+Digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] 
+LowCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+                     'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q',
+                     'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+                     'z']
+ 
+UpCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
+                     'I', 'J', 'K', 'M', 'N', 'O', 'P', 'Q',
+                     'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+                     'Z']
+ 
+Symbols = ['@', '#', '$', '%', '=', ':', '?', '.', '/', '|', '~', '>',
+           '*', '(', ')', '<']
+
+combined= Digits + LowCase + UpCase + Symbols
+
+rand_dig = random.choice(Digits)
+rand_low = random.choice(LowCase)
+rand_up = random.choice(UpCase)
+rand_symb = random.choice(Symbols)
+
+first4 = rand_dig + rand_low + rand_up + rand_symb
+
+
+for x in range(maxL-4):
+    password = first4 + random.choice(combined) + random.choice(combined) + random.choice(combined) + random.choice(combined) + random.choice(combined) + random.choice(combined) + random.choice(combined) + random.choice(combined)
+    
+print(password)
